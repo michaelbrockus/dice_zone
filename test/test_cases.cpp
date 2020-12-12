@@ -9,7 +9,8 @@
 // project since its important to test once implementation against a set
 // of common test cases
 //
-#include "program.hpp"
+#include "game.hpp"
+#include <vector>
 #include <unity.h>
 
 //
@@ -28,25 +29,27 @@ void tearDown(void)
 //
 // list of all the test cases for this project
 //
-static void test_simpleAssertTrue(void)
+
+static void test_rollOutput(void)
 {
-    TEST_ASSERT_TRUE(1);
+    std::vector<int> vect = {0, 0, 0};
+    TEST_ASSERT_TRUE(rollOutput(&vect));
 } // end of test case
 
-static void test_simpleAssertNull(void)
+static void test_rollOutput_withNull(void)
 {
-    TEST_ASSERT_NULL(NULL);
+    TEST_ASSERT_FALSE(rollOutput(nullptr));
 } // end of test case
 
-static void test_simpleAssertCompare(void)
+static void test_rollRandom(void)
 {
-    int dummy = 3;
-    TEST_ASSERT_EQUAL_INT(3, dummy);
+    std::vector<int> vect = {0, 0, 0, 0, 0, 0};
+    TEST_ASSERT_TRUE(rollRandom(&vect));
 } // end of test case
 
-static void test_simpleAssertCall(void)
+static void test_rollRandom_withNull(void)
 {
-    TEST_ASSERT_EQUAL_STRING("Hello, C++ Developer.", greet());
+    TEST_ASSERT_FALSE(rollRandom(nullptr));
 } // end of test case
 
 //
@@ -56,10 +59,10 @@ int main(void)
 {
     UNITY_BEGIN();
 
-    RUN_TEST(test_simpleAssertTrue);
-    RUN_TEST(test_simpleAssertNull);
-    RUN_TEST(test_simpleAssertCall);
-    RUN_TEST(test_simpleAssertCompare);
+    RUN_TEST(test_rollOutput);
+    RUN_TEST(test_rollOutput_withNull);
+    RUN_TEST(test_rollRandom);
+    RUN_TEST(test_rollRandom_withNull);
 
     return UNITY_END();
 } // end of function main
