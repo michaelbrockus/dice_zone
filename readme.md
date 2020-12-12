@@ -1,10 +1,18 @@
-# C++ Program
+# DiceZone for command-line. 🎲
 
 ## About
 
 * * *
 
-Please add relevant information about your application.
+Dice are small, throwable objects with marked sides
+that can rest in multiple positions. They are used
+for generating random numbers, commonly as part of
+tabletop games, including dice games, board games,
+role-playing games, and games of chance.
+
+DiceZone is a dice rolling simulator application that
+really puts you in the zone. Gain the ability to roll
+dice from within the command-line.
 
 ## Tooling information
 
@@ -40,7 +48,7 @@ meson install -C builddir
 And finally we run this cool application:
 
 ```console
-prog
+dice-zone
 ```
 
 ## Contact the developer
