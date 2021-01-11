@@ -14,6 +14,12 @@ DiceZone is a dice rolling simulator application that
 really puts you in the zone. Gain the ability to roll
 dice from within the command-line.
 
+## Program Preview
+
+* * *
+
+Please add an image for the user to see.
+
 ## Tooling information
 
 * * *
