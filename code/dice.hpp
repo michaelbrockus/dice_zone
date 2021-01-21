@@ -6,19 +6,20 @@
 #ifndef DICE_HPP
 #define DICE_HPP
 
-#include <string>
-
-enum
+class Dice
 {
-    SIDES_06 = 6,
-    SIDES_08 = 8,
-    SIDES_10 = 10
-};
+    private:
+        unsigned int _sides;
+        unsigned int _value;
     
-typedef struct Dice
-{
-    std::string type;
-    int sides;
-};
+    public:
+        Dice();
+        ~Dice();
+        void roll();
+        void reset();
+        void setSides(const unsigned int newSides);
+        const unsigned int getRoll();
+
+}; // end class
 
 #endif // end of DICE_HPP
