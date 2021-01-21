@@ -11,16 +11,16 @@
 // zero and six. If dice is null function well
 // return false else true.
 //
-const bool rollOutput(std::vector<int> *dice)
+const bool rollOutput(Roller *dice)
 {
     if (!dice)
     {
         return false;
     } // end if
 
-    for (const auto &die : *dice)
+    for (auto die : dice->result())
     {
-        std::cout << "Rolled " << die << std::endl;
+        std::cout << "Rolled " << die.getRoll() << std::endl;
     } // end for
 
     return true;
@@ -32,17 +32,14 @@ const bool rollOutput(std::vector<int> *dice)
 // zero and six. If dice is null function well
 // return false else true.
 //
-const bool rollRandom(std::vector<int> *dice)
+const bool rollRandom(Roller *dice)
 {
     if (!dice)
     {
         return false;
     } // end if
 
-    for (unsigned int it = 0; it < MAX_DIE; ++it)
-    {
-        dice->at(it) = std::rand() % MAX_DIE + 1;
-    } // end for
+    dice->roll();
 
     return true;
 } // end of function rollRandom
