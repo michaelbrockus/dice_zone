@@ -4,7 +4,9 @@
 // gmail: <michaelbrockus@gmail.com>
 //
 #include "program.hpp"
+#include "roller.hpp"
 #include "game.hpp"
+#include "dice.hpp"
 
 #include <iostream>
 #include <vector>
@@ -19,7 +21,7 @@
 //
 int foundation(void)
 {
-    std::vector<int> dice = {0, 0, 0, 0, 0, 0}; // give dice to the user
+    Roller *dice = new(Roller); // give dice to the user
     std::string command;
 
     std::srand(static_cast<unsigned int>(std::time(nullptr)));
@@ -32,8 +34,8 @@ int foundation(void)
 
         if (!command.compare("roll"))
         {
-            rollRandom(&dice);
-            rollOutput(&dice);
+            rollRandom(dice);
+            rollOutput(dice);
         } // end if
         else if (!command.compare("quit"))
         {
@@ -46,6 +48,8 @@ int foundation(void)
         std::fflush(stdin);
         std::getchar();
     } // end while
+
+    delete dice;
 
     return EXIT_SUCCESS;
 } // end of function foundation
