@@ -4,7 +4,6 @@
 // gmail: <michaelbrockus@gmail.com>
 //
 #include "program.hpp"
-#include "roller.hpp"
 #include "game.hpp"
 #include "dice.hpp"
 
@@ -21,22 +20,29 @@
 //
 int foundation(void)
 {
-    Roller *dice = new(Roller); // give dice to the user
+    std::vector<Dice> dice = {
+        Dice(), Dice(), Dice(),
+        Dice(), Dice(), Dice()
+    }; // give dice to the user
     std::string command;
 
     std::srand(static_cast<unsigned int>(std::time(nullptr)));
     while (true)
     {
         clearScreen();
-        std::cout << "Enter a command to run an action [roll/quit]" << std::endl;
-        std::cout << "command: ";
+        std::cout << "DICE-ZONE!  Command-line tool for dice games)" << std::endl;
+        std::cout << "Enter a command to run an action [roll/reset/quit]" << std::endl;
+        std::cout << "command: >> ";
         std::cin >> command;
 
         if (!command.compare("roll"))
         {
-            rollRandom(dice);
-            rollOutput(dice);
+            rollTable(&dice);
         } // end if
+        else if (!command.compare("reset"))
+        {
+            resetTable(&dice);
+        } // end else if
         else if (!command.compare("quit"))
         {
             clearScreen();
@@ -48,8 +54,6 @@ int foundation(void)
         std::fflush(stdin);
         std::getchar();
     } // end while
-
-    delete dice;
 
     return EXIT_SUCCESS;
 } // end of function foundation

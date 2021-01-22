@@ -16,13 +16,12 @@
 #include <vector>
 #include <string>
 
-#include "roller.hpp"
 #include "dice.hpp"
 
 const unsigned int MAX_DIE = 6;
 
-const bool rollOutput(Roller *dice);
-const bool rollRandom(Roller *dice);
+const bool rollTable(std::vector<Dice> *dice);
+const bool resetTable(std::vector<Dice> *dice);
 void clearScreen();
 
 #endif // end of GAME_HPP

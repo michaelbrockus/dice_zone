@@ -21,33 +21,27 @@ Dice::~Dice()
 } // end of dtor
 
 //
+// Should set current die sides
+//
+void Dice::setSides(const int sides)
+{
+    this->_sides = sides;
+} // end of method setSides
+
+//
 // Should roll the die
 //
-void Dice::roll()
+const unsigned int Dice::roll()
 {
-    _value = std::rand() % _sides + 1;
+    this->_value = std::rand() % _sides + 1;
+    return this->_value;
 } // end of method roll
 
 //
 // Should reset die value
 //
-void Dice::reset()
+const unsigned int Dice::reset()
 {
-    _value = 0;
+    this->_value = 0;
+    return this->_value;
 } // end of method reset
-
-//
-// Should set current die sides
-//
-void Dice::setSides(const unsigned int newSides)
-{
-    _sides = newSides;
-} // end of method setSides
-
-//
-// Should return the value rolled
-//
-const unsigned int Dice::getRoll()
-{
-    return _value;
-} // end of method getRoll

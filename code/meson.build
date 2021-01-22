@@ -1,4 +1,4 @@
-code_lib = static_library('code_lib', files('program.cpp', 'game.cpp', 'roller.cpp', 'dice.cpp'),
+code_lib = static_library('code_lib', files('program.cpp', 'game.cpp', 'dice.cpp'),
     include_directories: '.',
     install: true)
 

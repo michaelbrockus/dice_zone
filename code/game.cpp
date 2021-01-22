@@ -11,39 +11,49 @@
 // zero and six. If dice is null function well
 // return false else true.
 //
-const bool rollOutput(Roller *dice)
+const bool rollTable(std::vector<Dice> *dice)
 {
     if (!dice)
     {
         return false;
     } // end if
 
-    for (auto die : dice->result())
+    std::cout << "ROLLED:" << std::endl;
+    std::cout << "All dice have been rolled." << std::endl;
+
+    for (auto die : *dice)
     {
-        std::cout << "Rolled " << die.getRoll() << std::endl;
+        std::cout << die.roll() << " ";
     } // end for
 
+    putchar('\n');
+
     return true;
-} // end of function rollOutput
-
+} // end of function rollTable
 
 //
-// Should set each die to a random value between
-// zero and six. If dice is null function well
-// return false else true.
+// Should set each die to a init value of zero. If
+// dice is null function well return false else true.
 //
-const bool rollRandom(Roller *dice)
+const bool resetTable(std::vector<Dice> *dice)
 {
     if (!dice)
     {
         return false;
     } // end if
 
-    dice->roll();
+    std::cout << "RESET:" << std::endl;
+    std::cout << "All dice have been reset to zero." << std::endl;
+
+   for (auto die : *dice)
+    {
+        std::cout << die.reset() << " ";
+    } // end for
+
+    putchar('\n');
 
     return true;
-} // end of function rollRandom
-
+} // end of function resetTable
 
 //
 // Should clear the screen for a clean console

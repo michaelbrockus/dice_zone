@@ -15,11 +15,9 @@ class Dice
     public:
         Dice();
         ~Dice();
-        void roll();
-        void reset();
-        void setSides(const unsigned int newSides);
-        const unsigned int getRoll();
-
+        void setSides(const int sides);
+        const unsigned int roll();
+        const unsigned int reset();
 }; // end class
 
 #endif // end of DICE_HPP
