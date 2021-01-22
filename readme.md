@@ -18,7 +18,7 @@ dice from within the command-line.
 
 * * *
 
-Please add an image for the user to see.
+![Command-Line App](.github/screenshots/preview.png)
 
 ## Tooling information
 
