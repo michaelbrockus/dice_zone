@@ -14,6 +14,17 @@ DiceZone is a dice rolling simulator application that
 really puts you in the zone. Gain the ability to roll
 dice from within the command-line.
 
+### Usage
+
+The roll command will roll the dice on the imaginary
+table.
+
+The reset command is used to set all die to their
+initial values for reuse in the game your playing.
+
+You know what the quit command does, it's there to
+simply quit the application.
+
 ## Program Preview
 
 * * *
